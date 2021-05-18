@@ -1,0 +1,11 @@
+{
+    "port":5050,
+    "origin":"http://localhost:5050",
+    "dbconnection":{
+      "user": "postgres",
+      "host": "localhost",
+      "database": "ASLAN",
+      "password": "admlocal123-",
+      "port": 5432
+    }
+  }
