@@ -6,5 +6,6 @@ let TicketController = require('../controllers/ticket.Controller');
 router.get('/', TicketController.getTickets);
 router.get('/:user_id', TicketController.getTicketbyID);
 router.post('/', TicketController.postTicket);
+router.put('/:user_id', TicketController.putTicket);
 
 module.exports = router;

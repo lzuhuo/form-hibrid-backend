@@ -60,8 +60,32 @@ let postTicket = async (ticket) =>{
     }
 }
 
+//Update ticket
+let putTicket = async (user_id, ticket) =>{
+    console.log(user_id)
+    const sql = {
+        // give the query a unique name
+        name: 'put-account',
+        text: ` UPDATE accounts SET username=$1, password=$2, email=$3 
+                WHERE user_id=$4 `,
+        values: [ticket.username, ticket.password, ticket.email, user_id],
+      }
+    
+    try {
+        const client = new Client(config);
+        client.connect();
+        const {command} = await client.query(sql);
+        client.end();
+        return command;
+        
+    } catch (error) {
+        throw Error(error)
+    }
+}
+
 module.exports = { 
                     getTickets,
                     getTicketbyID,
-                    postTicket
+                    postTicket,
+                    putTicket
                  }

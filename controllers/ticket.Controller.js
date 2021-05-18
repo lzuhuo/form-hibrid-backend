@@ -43,8 +43,25 @@ let postTicket = async (req, res) =>{
     return res.json(result);
 }
 
+//PUT new Ticket
+let putTicket = async (req, res) =>{
+    let result;
+    let ticket = req.body;
+    let { user_id } = req.params;
+
+    try {
+        let response  = await TicketService.putTicket(user_id, ticket);
+        result = response;
+    } catch (error) {
+        result = {message: 'Erro ao atualizar Ticket'}
+    }
+
+    return res.json(result);
+}
+
 module.exports = {  
                     getTickets,
                     getTicketbyID,
-                    postTicket
+                    postTicket,
+                    putTicket
                  }
