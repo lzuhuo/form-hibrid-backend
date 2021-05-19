@@ -4,8 +4,8 @@ let TicketController = require('../controllers/ticket.Controller');
 
 //Routes de Controllers
 router.get('/', TicketController.getTickets);
-router.get('/:user_id', TicketController.getTicketbyID);
+router.get('/:cd_ocorrencia', TicketController.getTicketbyID);
 router.post('/', TicketController.postTicket);
-router.put('/:user_id', TicketController.putTicket);
+router.put('/:cd_ocorrencia', TicketController.putTicket);
 
 module.exports = router;

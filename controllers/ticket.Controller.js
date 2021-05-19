@@ -17,9 +17,9 @@ let getTickets = async (req, res) =>{
 //GET Ticket by ID
 let getTicketbyID = async (req, res) =>{
     let result;
-    let { user_id } = req.params;
+    let { cd_ocorrencia } = req.params;
     try {
-        let response  = await TicketService.getTicketbyID(user_id);
+        let response  = await TicketService.getTicketbyID(cd_ocorrencia);
         result = response;
     } catch (error) {
         result = {message: 'Sei lá'}
@@ -47,10 +47,10 @@ let postTicket = async (req, res) =>{
 let putTicket = async (req, res) =>{
     let result;
     let ticket = req.body;
-    let { user_id } = req.params;
+    let { cd_ocorrencia } = req.params;
 
     try {
-        let response  = await TicketService.putTicket(user_id, ticket);
+        let response  = await TicketService.putTicket(cd_ocorrencia, ticket);
         result = response;
     } catch (error) {
         result = {message: 'Erro ao atualizar Ticket'}
