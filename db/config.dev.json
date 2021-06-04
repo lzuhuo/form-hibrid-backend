@@ -4,8 +4,8 @@
   "dbconnection":{
     "user": "postgres",
     "host": "localhost",
-    "database": "ASLAN",
-    "password": "admlocal123-",
+    "database": "<YOUR_DB_NAME",
+    "password": "<YOUR_PWD",
     "port": 5432
   }
 }
